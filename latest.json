@@ -1,0 +1,4 @@
+{
+    "version": "0.0.1",
+    "releaseNotes": ["This release is to test the GitHub action workflow."]
+}
