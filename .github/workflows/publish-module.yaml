@@ -1,0 +1,25 @@
+name: CD
+on:
+  push:
+    paths:
+      - 'latest.json'
+  workflow_dispatch:
+jobs:
+  publish-module:
+    name: Publish to PSGallery
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build-Test
+      run: |
+        . .\build.ps1
+        Start-ModuleInstallationBuild
+        Set-ModuleInstallationTestReport
+        Push-ModuleInstallationTestReport -Email ${{ secrets.EMAIL_KEY }}
+    - name: Publish
+      if: success()
+      run: |
+        Import-Module ModuleName -Force
+        Publish-Module -Name ModuleName -NuGetApiKey ${{ secrets.NUGET_API_KEY }} -Force
