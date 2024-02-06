@@ -1,0 +1,16 @@
+{
+    "folders": [
+      {
+        "name": "DIST",
+        "path": "D:/Users/%USERNAME%/Documents/PowerShell/Modules/ModuleName"
+      },
+      {
+        "name": "BUILD",
+        "path": "."
+      }
+    ],
+    "settings": {
+      "files.defaultLanguage": "ps1",
+      "powershell.cwd": "BUILD"
+    }
+  }
