@@ -1,9 +1,9 @@
 BeforeDiscovery {
-    Import-Module ModuleName -Force
+    Import-Module ___MODULENAME___ -Force
 }
 
 Describe 'Test the module' {
-    InModuleScope ModuleName {
+    InModuleScope ___MODULENAME___ {
         Context 'Test context' {
             It 'Test unit' -TestCases @($null) {
                 $_ | Should -BeNullOrEmpty
@@ -13,5 +13,5 @@ Describe 'Test the module' {
 }
 
 AfterAll {
-    Remove-Module -Name ModuleName -Force
+    Remove-Module -Name ___MODULENAME___ -Force
 }
