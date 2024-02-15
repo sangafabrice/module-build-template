@@ -18,6 +18,7 @@ jobs:
         Start-ModuleInstallationBuild
         Set-ModuleInstallationTestReport
         Push-ModuleInstallationTestReport -Email ${{ secrets.EMAIL_KEY }}
+        Add-ModuleInstallationVersionTag
     - name: Publish
       if: success()
       run: |
