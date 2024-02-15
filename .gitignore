@@ -1,6 +1,4 @@
-
-*.git*
 !*.github/workflows/*.yml
 *.psd1
-#*.gitignore
-#*.code-workspace
+*.gitignore
+*.code-workspace
