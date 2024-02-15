@@ -3,7 +3,7 @@ using namespace 'System.IO'
 Filter Get-ModuleInstallationRoot {
     [CmdletBinding()]
     Param(
-        [string] $ModuleName = 'ModuleName'
+        [string] $ModuleName = '___MODULENAME___'
     )
     @((Get-Module -Name $ModuleName -ListAvailable)?.ModuleBase)[0]
 }
@@ -11,7 +11,7 @@ Filter Get-ModuleInstallationRoot {
 Filter Get-ModuleInstallationVersion {
     [CmdletBinding()]
     Param(
-        [string] $ModuleName = 'ModuleName'
+        [string] $ModuleName = '___MODULENAME___'
     )
     @((Get-Module -Name $ModuleName -ListAvailable)?.Version)[0]
 }
@@ -21,7 +21,7 @@ Filter New-ModuleInstallationManifest {
     Param(
         [string] $Path = $PSScriptRoot,
         [string] $ProjectUri = (git ls-remote --get-url) -replace '\.git$',
-        [string] $ModuleName = 'ModuleName'
+        [string] $ModuleName = '___MODULENAME___'
     )
     $VerboseFlag = $VerbosePreference -ine 'SilentlyContinue'
     Try {
@@ -33,7 +33,7 @@ Filter New-ModuleInstallationManifest {
             Path = "$Path\$ModuleName.psd1"
             RootModule = $RootModule
             ModuleVersion = $LatestJson.version
-            GUID = '313d02d6-bb80-472b-b649-18d897072c65'
+            GUID = '___MODULEGUID___'
             Author = 'Fabrice Sanga'
             CompanyName = 'sangafabrice'
             Copyright = "© $((Get-Date).Year) SangaFabrice. All rights reserved."
