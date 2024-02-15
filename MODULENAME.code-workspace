@@ -2,7 +2,7 @@
     "folders": [
       {
         "name": "DIST",
-        "path": "D:/Users/%USERNAME%/Documents/PowerShell/Modules/ModuleName"
+        "path": "___PATHTOMODULENAME___"
       },
       {
         "name": "BUILD",
